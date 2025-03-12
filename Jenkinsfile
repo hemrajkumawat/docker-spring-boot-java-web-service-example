@@ -23,7 +23,7 @@ pipeline {
             steps {
                 script {
                     // Run tests inside the container
-                    sh 'docker run --rm  -v $(pwd):/app -w /app $REGISTRY/$IMAGE_NAME:$IMAGE_TAG mvn test'
+                    sh 'docker run --rm  -v $(pwd):/app -w /app -e JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk $REGISTRY/$IMAGE_NAME:$IMAGE_TAG mvn test'
                 }
             }
         }
