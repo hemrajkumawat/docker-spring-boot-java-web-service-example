@@ -9,8 +9,8 @@ RUN apk update && apk add bash
 WORKDIR /app
 
 # Copy the fat jar into the container at /app
-COPY ./target/docker-java-app-example.jar /app
-
+#COPY ./target/docker-java-app-example.jar /app
+RUN mvn package
 # Make port 8085 available to the world outside this container
 EXPOSE 8085
 
