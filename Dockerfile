@@ -1,5 +1,5 @@
 # Build stage: Use Maven to build the application
-FROM maven:3.8-jdk-8-alpine AS build
+FROM maven:3-jdk-8-alpine AS build
 WORKDIR /build
 # Copy the project files to the container
 COPY pom.xml .
