@@ -2,9 +2,9 @@ pipeline {
     agent any
     environment {
         REGISTRY = 'localhost:5000'
-        IMAGE_NAME = 'myapp'
+        IMAGE_NAME = 'docker-java-hello-world-app'
         IMAGE_TAG = 'latest'
-        CONTAINER_NAME = 'myapp-container'
+        CONTAINER_NAME = 'registry'
     }
     stages {
         stage('Checkout Code') {
