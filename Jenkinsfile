@@ -23,7 +23,7 @@ pipeline {
             steps {
                 script {
                     // Run tests inside the container
-                    sh 'docker run --rm $REGISTRY/$IMAGE_NAME:$IMAGE_TAG mvn test'
+                    sh 'docker run --rm  -v $(pwd):/app -w /app $REGISTRY/$IMAGE_NAME:$IMAGE_TAG mvn test'
                 }
             }
         }
@@ -40,7 +40,7 @@ pipeline {
                     // Stop existing container if running
                     sh 'docker stop $CONTAINER_NAME || true && docker rm $CONTAINER_NAME || true'
                     // Run new container
-                    sh 'docker run -d -p 8080:8080 --name $CONTAINER_NAME $REGISTRY/$IMAGE_NAME:$IMAGE_TAG'
+                    sh 'docker run -d -p 8085:8085 --name $CONTAINER_NAME $REGISTRY/$IMAGE_NAME:$IMAGE_TAG'
                 }
             }
         }
