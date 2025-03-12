@@ -50,7 +50,7 @@ pipeline {
             sh 'docker system prune -f'
         }
         failure {
-            mail to: 'admin@example.com', subject: 'Build Failed', body: 'Check Jenkins logs for details.'
+            //mail to: 'admin@example.com', subject: 'Build Failed', body: 'Check Jenkins logs for details.'
         }
     }
 }
