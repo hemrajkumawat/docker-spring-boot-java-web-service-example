@@ -8,7 +8,7 @@ COPY src ./src
 RUN mvn clean package
 
 # Use an official OpenJDK runtime as a parent image
-FROM openjdk:8-jre-alpine
+FROM openjdk:8-jdk-alpine
 
 # set shell to bash
 # source: https://stackoverflow.com/a/40944512/3128926
