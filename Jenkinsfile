@@ -40,7 +40,7 @@ pipeline {
                     // Stop existing container if running
                     sh 'docker stop $CONTAINER_NAME || true && docker rm $CONTAINER_NAME || true'
                     // Run new container
-                    sh 'docker run -d -p 8085:8085 --name $CONTAINER_NAME $REGISTRY/$IMAGE_NAME:$IMAGE_TAG'
+                    sh 'docker run -d -p 8080:8085 --name $CONTAINER_NAME $REGISTRY/$IMAGE_NAME:$IMAGE_TAG'
                 }
             }
         }
