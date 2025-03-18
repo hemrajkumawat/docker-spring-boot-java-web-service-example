@@ -34,6 +34,13 @@ pipeline {
                 }
             }
         }
+        stage('Security Scan - Trivy') {
+            steps {
+                script {
+                    sh 'docker run --rm aquasec/trivy $REGISTRY/$IMAGE_NAME:$IMAGE_TAG'
+                }
+            }
+        }
         stage('Deploy Locally') {
             steps {
                 script {
